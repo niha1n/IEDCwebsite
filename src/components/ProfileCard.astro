@@ -1,0 +1,95 @@
+---
+interface Props {
+  imgSrc: string;
+  pos: string;
+  name: string;
+  classes: string;
+  mail: string;
+}
+
+const { imgSrc, pos, name, classes, mail } = Astro.props;
+import HoverButton from './HoverButton.astro';
+---
+
+<div class=`pro-card w-64 h-64 p-2 mb-[100px]  text-center ${classes}`>
+  <img class="p-1" src={imgSrc} class="mx-auto h-44" />
+  <h1 class="p-1">{name}</h1>
+  <p class="p-1">{pos}</p>
+  
+<button class="cta  mx-auto  " onclick=`window.location.href = '${mail}'`>
+    <span class="">
+        Contact
+    </span>
+    <svg viewBox="0 0 48 48" height="23px" width="23px" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" fill="#234567" stroke="#234567"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;stroke:#234567;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="cls-1" d="M6.47,10.71a2,2,0,0,0-2,2h0V35.32a2,2,0,0,0,2,2H41.53a2,2,0,0,0,2-2h0V12.68a2,2,0,0,0-2-2H6.47Zm33.21,3.82L24,26.07,8.32,14.53"></path></g></svg>
+  </button>
+
+</div>
+
+
+<style>
+    .cta {
+ position: relative;
+ padding: 10px 15px;
+ transition: all 0.2s ease;
+ border: none;
+ background: none;
+ 
+ 
+}
+
+.cta:before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ display: block;
+ border-radius: 50px;
+ background: #abe4ff;
+ width: 45px;
+ height: 45px;
+ transition: all 0.3s ease;
+ box-shadow: 1px 1px 2px gray;
+
+}
+
+.cta span {
+ position: relative;
+ font-family: "Ubuntu", sans-serif;
+ font-size: 18px;
+ font-weight: 600;
+ display: inline-block; 
+ 
+
+}
+
+.cta svg {
+ position: relative;
+ top: 0;
+ margin-left: 12px;
+ fill: none;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ stroke: #112A46;
+ stroke-width: 2;
+ transform: translateX(-5px);
+ transition: all 0.3s ease;
+ display: inline-block; 
+ margin-bottom: 4px;
+
+}
+
+.cta:hover:before {
+ width: 100%;
+ background: #abe4ff;
+ box-shadow: 1px 1px 2px gray;
+}
+
+.cta:hover svg {
+ transform: translateX(0);
+}
+
+.cta:active {
+ transform: scale(0.95);
+}
+
+</style>

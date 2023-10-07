@@ -1,0 +1,27 @@
+---
+interface Props {
+	title: string;
+}
+
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Sections/Footer.astro'
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+		<title>{title}</title>
+	</head>
+	<body>
+		<Navbar/>
+		<slot />
+		<Footer/>
+	</body>
+	
+</html>
+
