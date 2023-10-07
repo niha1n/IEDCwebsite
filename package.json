@@ -1,0 +1,21 @@
+{
+  "name": "iedcweb",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.0.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.12",
+    "astro": "^3.1.1",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.3.3"
+  }
+}

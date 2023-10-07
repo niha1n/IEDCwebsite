@@ -1,0 +1,176 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const navClass =
+  'navlink px-4 py-2 mt-2 text-[#5C5484] text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-[#172177] focus:text-[#172177] hover:bg-[#d5f1ff] focus:bg-[#d5f1ff] ';
+---
+
+<!-- component -->
+<script
+  src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+  defer></script>
+<div class="navbar w-full z-40 shadow-lg sticky top-0 bg-white">
+  <div
+    x-data="{ open: false }"
+    class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
+  >
+    <div class="flex flex-row items-center justify-between">
+      <a href="/" class=""><img class="max-h-16" src="iedc.png" alt="" /></a>
+      <button
+        class="md:hidden rounded-lg focus:outline-none focus:shadow-outline"
+        @click="open = !open"
+      >
+        <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+          <path
+            x-show="!open"
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clip-rule="evenodd"></path>
+          <path
+            x-show="open"
+            fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+    </div>
+    <nav
+      :class="{'flex': open, 'hidden': !open}"
+      class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row"
+    >
+      <a class={navClass} href="/">Home</a>
+
+      <!-- ---------------------------- Project dropdown ---------------- -->
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button
+          @click="open = !open"
+          class=`flex flex-row items-center w-full text-[#172177] ${navClass}`
+        >
+          <span>Projects</span>
+          <svg
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:mt-1"
+            ><path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path></svg
+          >
+        </button>
+        <div
+          x-show="open"
+          x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+        >
+          <div
+            class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
+          >
+            <a
+              class=`navlink block px-4 py-2 mt-2 text-[#5C5484] text-sm font-semibold bg-transparent rounded-lg  md:mt-0  hover:text-[#172177] focus:text-[#172177] hover:bg-[#d5f1ff] focus:bg-[#d5f1ff] focus:outline-none focus:shadow-outline `
+              href="#">IEDC NEST</a
+            >
+            <a
+              class=`navlink block px-4 py-2 mt-2 text-[#5C5484] text-sm font-semibold bg-transparent rounded-lg  md:mt-0  hover:text-[#172177] focus:text-[#172177] hover:bg-[#d5f1ff] focus:bg-[#d5f1ff] focus:outline-none focus:shadow-outline`
+              href="/leap">LEAP</a
+            >
+            <a
+              class=`navlink block px-4 py-2 mt-2 text-[#5C5484] text-sm font-semibold bg-transparent rounded-lg  md:mt-0  hover:text-[#172177] focus:text-[#172177] hover:bg-[#d5f1ff] focus:bg-[#d5f1ff] focus:outline-none focus:shadow-outline`
+              href="/salt">SALT</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- ------------------------------------------------------------------------------------------ -->
+
+      <a class={navClass} href="/funds">IEDC Fund Updates</a>
+      <a class={navClass} href="/events">Events and Activities</a>
+      <a class={navClass} href="/schemes">Schemes</a>
+
+      <div @click.away="open = false" class="relative" x-data="{ open: false }">
+        <button
+          @click="open = !open"
+          class=`flex flex-row items-center w-full text-[#172177] ${navClass}`
+        >
+          <span>More</span>
+          <svg
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            :class="{'rotate-180': open, 'rotate-0': !open}"
+            class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:mt-1"
+            ><path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path></svg
+          >
+        </button>
+        <div
+          x-show="open"
+          x-transition:enter="transition ease-out duration-100"
+          x-transition:enter-start="transform opacity-0 scale-95"
+          x-transition:enter-end="transform opacity-100 scale-100"
+          x-transition:leave="transition ease-in duration-75"
+          x-transition:leave-start="transform opacity-100 scale-100"
+          x-transition:leave-end="transform opacity-0 scale-95"
+          class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48"
+        >
+          <div
+            class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800"
+          >
+            <a
+              class=`navlink block px-4 py-2 mt-2 text-[#5C5484] text-sm font-semibold bg-transparent rounded-lg  md:mt-0  hover:text-[#172177] focus:text-[#172177] hover:bg-[#d5f1ff] focus:bg-[#d5f1ff] focus:outline-none focus:shadow-outline`
+              href="/innovate">Innovate Portal</a
+            >
+            <a
+              class=`navlink block px-4 py-2 mt-2 text-[#5C5484] text-sm font-semibold bg-transparent rounded-lg  md:mt-0  hover:text-[#172177] focus:text-[#172177] hover:bg-[#d5f1ff] focus:bg-[#d5f1ff] focus:outline-none focus:shadow-outline`
+              href="#">IEDC Summit</a
+            >
+            <a
+              class=`navlink block px-4 py-2 mt-2 text-[#5C5484] text-sm font-semibold bg-transparent rounded-lg  md:mt-0  hover:text-[#172177] focus:text-[#172177] hover:bg-[#d5f1ff] focus:bg-[#d5f1ff] focus:outline-none focus:shadow-outline `
+              href="/faq">FAQ</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const pathname = new URL(window.location.href).pathname; // Get the current pathname
+
+    // Get all the navigation links
+    const navLinks = document.querySelectorAll('.navlink');
+
+    // Loop through the links and check if the pathname matches the link's "href" attribute
+    navLinks.forEach(function (link) {
+      if (link.getAttribute('href') === pathname) {
+        link.classList.add('active'); // Add the "active" class to the matching link
+      }
+    });
+  });
+
+  const dropdownButton = document.querySelector('#project-dropdown');
+  const dropdownList = document.querySelector(
+    '#project-dropdown + .dropdown-content.hidden'
+  );
+
+  dropdownButton.addEventListener('mouseenter', () => {
+    dropdownList.classList.toggle('hidden');
+  });
+
+  dropdownList.addEventListener('mouseleave', () => {
+    dropdownList.classList.toggle('hidden');
+  });
+</script>
+<style>
+  .active {
+    background-color: #d5f1ff;
+    color: #172177;
+  }
+</style>

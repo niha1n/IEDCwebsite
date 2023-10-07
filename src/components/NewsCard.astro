@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  id: string;
+  description: string;
+}
+
+const { href, title, id, description } = Astro.props;
+import HoverButton from './HoverButton.astro';
+import '../index.css';
+---
+
+<div
+  id={id}
+  class="news-card p-6 m-2  bg-white border border-gray-200 rounded-lg"
+>
+  <h6 class="mb-2 text-lg tracking-tight font-semibold text-gray-900">
+    {title}
+  </h6>
+  {id === 'news1' ? <p class="text-gray-500">{description}</p> : null}
+
+  <HoverButton title="Read more  " href={href} />
+</div>
+
+<style>
+  .news-card {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+</style>

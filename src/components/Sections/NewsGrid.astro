@@ -1,0 +1,67 @@
+---
+import NewsCard from '../NewsCard.astro';
+let desc =
+  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nesciunt at veritatis eum dicta possimus voluptate ipsa fugit. Sed nesciunt rem mollitia culpa, consequuntur dicta reprehenderit quod fuga? Dolores, pariatur.';
+---
+
+<div class="news-container rounded-b-3xl relative py-32">
+  <h1 class="text-3xl md:text-4xl mb- text-center  text-[#333333]">
+    <span class="overline decoration-[#004C9F] decoration-[3px]">La</span>test Announcements 
+  </h1>
+  
+  <div class="announcements md:grid place-content-center block mt-7">
+    <NewsCard
+      title="EOI for LEAP Coworks in IEDCs: Last Date 10 September 2023 EOI Documents and Apply Now"
+      href="/projects"
+      id="news1"
+      description={desc}
+    />
+    <NewsCard
+      title="Idea Fest 2023 Applications."
+      href="/projects"
+      id="news2"
+      description={desc}
+    />
+    <NewsCard
+      title="IEDC Execom Details"
+      href="/projects"
+      id="news3"
+      description={desc}
+    />
+    <NewsCard
+      title="Academic Internship Programme"
+      href="/projects"
+      id="news4"
+      description={desc}
+    />
+    <NewsCard
+      title="New IEDCs Sanction Order"
+      href="/projects"
+      id="news5"
+      description={desc}
+    />
+    <NewsCard
+      title="IEDC Application - For Establishing New IEDC in your Institution"
+      href="/projects"
+      id="news6"
+      description={desc}
+    />
+  </div>
+
+  
+</div>
+
+<style is:global>
+  .announcements {
+    grid-template-columns: 30% 25% 35%;
+    grid-auto-rows: minmax(130px, auto);
+  }
+  .news-container {
+    background-color: #fbfcfd;
+    z-index: 31;
+    color: #0c49aa;
+    margin-top: -25px;
+    box-shadow: 1px 1px 10px 1px grey;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='318' height='38.2' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23D5F1FF' stroke-width='7.7' stroke-opacity='0.35'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+  }
+</style>

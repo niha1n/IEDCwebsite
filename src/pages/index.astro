@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import NewsGrid from '../components/Sections/NewsGrid.astro';
+import IEDCsection from '../components/Sections/IEDCsection.astro';
+import IEDCTeam from '../components/Sections/IEDCTeam.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="intro h-screen flex relative rounded-b-3xl">
+    <div class="w-2/3 text-left md:text-center text-gray-100 m-auto">
+      <h2 class="text-xl md:text-4xl md:w-3/4 md:mx-auto">
+        Innovate. Educate.
+      </h2>
+      <h1 class="text-5xl md:text-8xl md:w-3/4 p-0 md:mx-auto">Elevate.</h1>
+      <br />
+      <p class="md:mx-auto md:w-3/4">
+        To create an innovation culture among Innovators by introducing them the
+        State-of-the-art technologies and positioning the Institution as a
+        Learning and Innovation Platform by delivering technically competent and
+        skilled Entrepreneurs.
+      </p>
+      <button  class="intro-btn my-4 mx-auto" onclick=window.location="#iedcAbout" >
+        <span >Know More</span>
+      </button>
+    </div>
+  </div>
+
+  <NewsGrid />
+  <IEDCsection />
+
+  <div
+    class="ksum-section bg-white rounded-b-3xl relative py-16 shadow-[10px] z-[31] mt-[-25px]"
+  >
+    <h1 class="text-3xl text-center font-semibold text-[#333333] mt-8">
+      <span class="overline decoration-[#004C9F] decoration-[3px]">Co</span>rporate Strategies
+    </h1>
+
+    <div class="obj-wrapper md:grid md:grid-rows-2 md:grid-cols-3">
+      <div class="mt-8 glass p-8 mx-4 vision row-start-1">
+        <h1 class="text-xl text-left font-semibold text-[#172177]">Vision</h1>
+        <hr class="w-[5%] h-[3px] bg-[#00BABE]" />
+        <p class="mt-3">
+          To create an innovation culture among Innovators by introducing them
+          the State-of-the-art technologies and positioning the Institution as a
+          Learning and Innovation Platform by delivering technically competent
+          and skilled Entrepreneurs.
+        </p>
+      </div>
+      <div
+        class="mission mt-8 glass p-8 mx-4 place-content-center mission row-start-2"
+      >
+        <h1 class="text-xl text-left font-semibold text-[#172177]">Mission</h1>
+        <hr class="w-[5%] h-[3px] bg-[#00BABE]" />
+
+        <p class="mt-3">
+          To create IEDC as an Innovation Platform and to create future founders
+          by promoting Innovation, Technology and Business Learning among
+          student community.
+        </p>
+      </div>
+      <div class="purpose mt-8 glass p-8 mx-4 place-content-center row-span-2">
+        <h1 class="text-xl text-left font-semibold text-[#172177]">Purpose</h1>
+        <hr class="w-[5%] h-[3px] bg-[#00BABE]" />
+        
+        <p class="mt-3">
+          The purpose of the IEDCs will be to act as an aspirational platform,
+          for the l student entrepreneurs and tech savvy innovators, in skilling
+          and sharpening their entrepreneurial skill sets. The selected
+          innovators will be exposed to Innovation culture, emerging
+          technologies and Business aspects with the implicit assumption that
+          the delta will become an entrepreneur and all the other skilled
+          talents will get high end jobs with the kind of exposure and skills
+          they acquire.
+        </p>
+      </div>
+
+      <div
+        class="objectives mt-8 glass p-8 mx-4 place-content-center objectives col-span-1 row-span-2"
+      >
+        <h1 class="text-xl text-left font-semibold text-[#172177]">
+          Objectives:
+        </h1>
+        <hr class="w-[5%] h-[3px] bg-[#00BABE]" />
+
+        <ul class="mt-3 list-[circle] marker:text-[#172177]">
+          <li class="objectives-card">
+            To promote knowledge driven and technology based Startup ventures
+          </li>
+          <li class="objectives-card">
+            To establish and Management of Technology Business Incubators and
+            thereby create the infrastructure and environment required for
+            promoting technology-based start-ups.
+          </li>
+          <li class="objectives-card">
+            To encourage leading class="objectives-card" entrepreneurs and
+            companies to set up high technology business activities in the
+            region.
+          </li>
+          <li class="objectives-card">
+            To undertake major initiatives in Innovation promotion in the
+            region.
+          </li>
+          <li class="objectives-card">
+            To build appropriate models for Entrepreneurship Development through
+            research
+          </li>
+          <li class="objectives-card">
+            To build appropriate models for Entrepreneurship Development through
+            research
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <IEDCTeam />
+</Layout>
+
+<style is:global>
+  .intro {
+    background-image: url('../../public/landingBg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    box-shadow: 1px 1px 10px 1px black;
+    z-index: 38;
+  }
+
+  .ksum-section {
+    box-shadow: 1px 1px 10px 1px lightgrey;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='318' height='38.2' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23D5F1FF' stroke-width='7.7' stroke-opacity='0.56'%3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.11);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+  }
+  body{
+    font-family: 'Lato', sans-serif;
+}
+h1{
+    font-family: 'Montserrat', sans-serif
+    
+}
+#news1{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#news2{
+    grid-column-start: 2;
+    grid-column-end: -1;
+}
+#news5{
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#news6{
+    grid-row-end: 4;
+    grid-column-start: 3;
+    grid-column-end: -1;
+}
+
+.footer{
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+.intro-btn {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #F4ECFF;
+    background-size: 400%;
+    border: none;
+    color: #5C5484;
+  }
+  
+  .intro-btn:hover::before {
+    transform: scaleX(1);
+
+  }
+  
+  .intro-btn span {
+    position: relative;
+    z-index: 1;
+    
+  }
+  
+  .intro-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background-image: linear-gradient(to left bottom, #c7fcec, #a4efd8, #7fe3c4, #54d5b0, #00c89b);
+
+    transition: all 0.475s;
+  }
+</style>

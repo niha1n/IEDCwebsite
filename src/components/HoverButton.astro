@@ -1,0 +1,81 @@
+---
+interface Props {
+  title:string;
+	href: string;
+}
+
+const  {title, href}  = Astro.props;
+---
+
+<button class="cta mt-3" onclick=`window.location.href = '${href}'`>
+    <span class="text-[#112A46] ">
+        {title}
+    </span>
+    <svg viewBox="0 0 13 10" height="10px" width="15px" class="my-auto">
+      <path d="M1,5 L11,5"></path>
+      <polyline points="8 1 12 5 8 9"></polyline>
+    </svg>
+  </button>
+
+<style>
+    .cta {
+ position: relative;
+ margin: auto;
+ padding: 10px 15px;
+ transition: all 0.2s ease;
+ border: none;
+ background: none;
+}
+
+.cta:before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ display: block;
+ border-radius: 50px;
+ background: #acf0ff;
+ width: 45px;
+ height: 45px;
+ transition: all 0.3s ease;
+}
+
+.cta span {
+ position: relative;
+ font-family: "Ubuntu", sans-serif;
+ font-size: 15px;
+ font-weight: 400;
+ display: inline-block; 
+
+}
+
+.cta svg {
+ position: relative;
+ top: 0;
+ margin-left: 12px;
+ fill: none;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ stroke: #112A46;
+ stroke-width: 2;
+ transform: translateX(-5px);
+ transition: all 0.3s ease;
+ display: inline-block; 
+ margin-bottom: 1px;
+
+}
+
+.cta:hover:before {
+ width: 100%;
+ background: #acf0ff;
+}
+
+.cta:hover svg {
+ transform: translateX(0);
+}
+
+.cta:active {
+ transform: scale(0.95);
+}
+
+</style>
