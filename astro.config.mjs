@@ -4,7 +4,14 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://niha1n.github.io',
-  base:'/IEDCwebsite',
-  integrations: [tailwind()]
+  devOptions: {
+    tailwindConfig: './tailwind.config.js',
+    },
+  // site: 'https://niha1n.github.io',
+  // base:'/',
+  integrations: [tailwind({
+    // Example: Provide a custom path to a Tailwind config file
+    configFile: './tailwind.config.cjs',
+  }),]
 });
+
